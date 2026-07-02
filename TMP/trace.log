@@ -1,1 +1,5 @@
-
+TRACE: RESPO_CORE awakened
+VECTOR: [5, 0, 0]
+PIPELINE: 3|6
+TMP-ID: TMP_core_SUB
+STATUS: OK
