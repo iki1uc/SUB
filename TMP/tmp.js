@@ -2,7 +2,6 @@
 
 export function TMP_from_SUB() {
 
-  // Vorläufige SUB-Daten (später: echtes File-Parsing)
   const params = {
     id: "SUB_CORE",
     state: "ACTIVE",
