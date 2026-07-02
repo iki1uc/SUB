@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>SUB / RESPO GATE</title>
+  <style>
+    body { font-family: monospace; background:#000; color:#0f0; }
+    .block { margin: 10px 0; padding: 8px; border:1px solid #0f0; }
+    .label { color:#0ff; }
+  </style>
+</head>
+<body>
+
+  <div class="block">
+    <span class="label">MODE:</span> 3all / 12all
+  </div>
+
+  <div class="block">
+    <span class="label">GATE ID:</span> GATE_92<br>
+    <span class="label">EICH:</span> EICH_12 (0.888)<br>
+    <span class="label">GEN:</span> GEN_CORE<br>
+    <span class="label">KETTE:</span> KETTE_81<br>
+    <span class="label">CLUSTER:</span> 81~81(1)
+  </div>
+
+  <div class="block" id="status">
+    <span class="label">STATUS:</span> READY
+  </div>
+
+  <script type="module">
+    // hier kannst du später SUB / TMP / RESPO anbinden
+    const GATE = {
+      mode: "3all|12all",
+      gate_id: "GATE_92",
+      eich: { id: "EICH_12", level: 0.888 },
+      gen: "GEN_CORE",
+      kette: "KETTE_81",
+      cluster: "81~81(1)"
+    };
+
+    // Beispiel: Anzeige im STATUS-Block
+    const status = document.getElementById("status");
+    status.innerHTML += "<br>GATE " + GATE.gate_id +
+                        " → CLUSTER " + GATE.cluster +
+                        " → EICH " + GATE.eich.level;
+  </script>
+
+</body>
+</html>
 
