@@ -1,7 +1,8 @@
-// TMP_from_SUB — erzeugt automatisch TMP-Spuren aus SUB-Dateien
+// SUB → RESPO automatische Übergabe
 
-export function TMP_from_SUB() {
+export function SUB_to_RESPO() {
 
+  // Vorläufige SUB-Daten (später: echtes File-Parsing)
   const params = {
     id: "SUB_CORE",
     state: "ACTIVE",
@@ -29,11 +30,34 @@ export function TMP_from_SUB() {
     alias: "respo_core"
   };
 
+  // AUTOMATISCHE ÜBERGABE → RESPO-Objekt
   return {
-    sub: params,
-    alias,
-    vector,
-    wake,
-    tmp_id: wake.tmp
+    id: params.id,
+    name: alias.original,
+    alias: alias.alias,
+    state: params.state,
+    pipeline: params.pipeline,
+
+    vector: vector.vector,
+    speed: vector.speed,
+
+    wake: wake,
+
+    tmp_id: wake.tmp,
+
+    kompetenzen: [
+      "struktur",
+      "vektor",
+      "alias",
+      "wake",
+      "pipeline",
+      "tmp"
+    ],
+
+    techniken: [
+      "core",
+      "dir",
+      "argumenteria"
+    ]
   };
 }
