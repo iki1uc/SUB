@@ -1,1 +1,5 @@
+# SUB-VECTOR
+speed = 5
+vector = [5, 0, 0]
+type = linear
 
