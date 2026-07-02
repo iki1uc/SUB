@@ -1,11 +1,40 @@
-export function TMP_from_SUB(sub) {
+// TMP_from_SUB — erzeugt automatisch TMP-Spuren aus SUB-Dateien
+
+export function TMP_from_SUB() {
+
+  // Vorläufige SUB-Daten (später: echtes File-Parsing)
+  const params = {
+    id: "SUB_CORE",
+    state: "ACTIVE",
+    mode: "NORMAL",
+    pipeline: "3|6"
+  };
+
+  const alias = {
+    original: "respo_core",
+    alias: "RC"
+  };
+
+  const vector = {
+    speed: 5,
+    vector: [5, 0, 0],
+    type: "linear"
+  };
+
+  const wake = {
+    job: "REC_core",
+    reason: "PX/PQ",
+    vector: [5, 0, 0],
+    pipeline: "3|6",
+    tmp: "TMP_core_SUB",
+    alias: "respo_core"
+  };
+
   return {
-    id: sub.id,
-    alias: sub.alias,
-    vector: sub.vector,
-    wake: sub.wake,
-    pipeline: sub.pipeline,
-    tmp: "TMP_" + sub.id
+    sub: params,
+    alias,
+    vector,
+    wake,
+    tmp_id: wake.tmp
   };
 }
-
