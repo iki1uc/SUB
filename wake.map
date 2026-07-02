@@ -1,1 +1,7 @@
+wake.job = REC_core
+wake.reason = PX/PQ
+wake.vector = [5, 0, 0]
+wake.pipeline = 3|6
+wake.tmp = TMP_core_SUB
+wake.alias = respo_core
 
